@@ -18,30 +18,37 @@ memeForm.addEventListener('submit', function(event) {
     
     memeForm.reset();
 
+    let memeTemplate = `
+        <img src="${imageURL}">
+        <span class="top">${topText}</span>
+        <span class="bottom">${bottomText}</span>
+    `
     
-    const memeDiv = document.createElement('div');
-    memeDiv.classList.add('meme');
+    // const memeDiv = document.createElement('div');
+    // memeDiv.classList.add('meme');
 
    
-    const imgElement = document.createElement('img');
-    imgElement.src = imageURL;
+    // const imgElement = document.createElement('img');
+    // imgElement.src = imageURL;
 
     
-    const topTextSpan = document.createElement('span');
-    topTextSpan.classList.add('top');
-    topTextSpan.textContent = topText;
+    // const topTextSpan = document.createElement('span');
+    // topTextSpan.classList.add('top');
+    // topTextSpan.textContent = topText;
 
     
-    const bottomTextSpan = document.createElement('span');
-    bottomTextSpan.classList.add('bottom');
-    bottomTextSpan.textContent = bottomText;
+    // const bottomTextSpan = document.createElement('span');
+    // bottomTextSpan.classList.add('bottom');
+    // bottomTextSpan.textContent = bottomText;
 
    
-    memeDiv.appendChild(imgElement);
-    memeDiv.appendChild(topTextSpan);
-    memeDiv.appendChild(bottomTextSpan);
-
-    memesContainer.appendChild(memeDiv);
+    // memeDiv.appendChild(imgElement);
+    // memeDiv.appendChild(topTextSpan);
+    // memeDiv.appendChild(bottomTextSpan);
+    let memeDiv = document.createElement('div');
+    memeDiv.classList.add('meme')
+    memeDiv.innerHTML = memeTemplate;
+    memesContainer.append(memeDiv);
 
     
     const deleteButton = document.createElement('button');
